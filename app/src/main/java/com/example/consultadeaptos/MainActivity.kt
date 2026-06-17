@@ -15,7 +15,6 @@ import java.net.URL
 
 class MainActivity : AppCompatActivity() {
 
-    //https://drive.google.com/file/d/1MOO4w2D-yrQdvR4bkaeohK9lJlIHwCPZ/view?usp=sharing
     private val urlBD = "https://drive.google.com/uc?export=download&id=1MOO4w2D-yrQdvR4bkaeohK9lJlIHwCPZ"
     private val nombreBD = "karuai2.sqlite3"
 
