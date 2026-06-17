@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#EEEEEE"
+    android:layout_marginBottom="8dp">
+
+    <TextView android:id="@+id/tv_fecha" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fecha"/>
+    <TextView android:id="@+id/tv_mes" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mes"/>
+    <TextView android:id="@+id/tv_monto" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monto Bs"/>
+    <TextView android:id="@+id/tv_dolares" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monto USD"/>
+    <TextView android:id="@+id/tv_tasa" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tasa"/>
+    <TextView android:id="@+id/tv_referencia" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Referencia"/>
+    <TextView android:id="@+id/tv_formapago" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Forma de Pago"/>
+    <TextView android:id="@+id/tv_fecha_operacion" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fecha Operación"/>
+</LinearLayout>

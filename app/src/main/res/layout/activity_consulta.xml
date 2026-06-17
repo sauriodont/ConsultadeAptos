@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nested_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/consulta_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- Selector de apartamento -->
+        <Spinner
+            android:id="@+id/spinner_apto"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Propietario e Inquilino -->
+        <TextView
+            android:id="@+id/tv_propietario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Propietario:"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_inquilino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inquilino:"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Información financiera -->
+        <TextView
+            android:id="@+id/tv_deuda_bs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deuda Bs:"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_deuda_usd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deuda $:"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_abonos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abonos:"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Título Meses Pendientes -->
+        <TextView
+            android:id="@+id/tv_meses_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meses Pendientes"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:id="@+id/layout_encabezado_meses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="#DDDDDD">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mes"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bs"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="USD"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- RecyclerView Meses -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_meses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Título Historial -->
+        <TextView
+            android:id="@+id/tv_historial_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historial de Operaciones"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- RecyclerView Historial -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMeses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

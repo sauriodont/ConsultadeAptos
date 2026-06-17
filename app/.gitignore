@@ -1,0 +1,3 @@
+/build
+# Ignorar archivos de heap dump
+*.hprof
