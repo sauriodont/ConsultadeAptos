@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.GridLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.consultadeaptos.models.DatabaseHelper
+// import com.example.consultadeaptos.models.DatabaseHelper
 import com.example.consultadeaptos.models.PizarraItem
 
 class Pizarra : AppCompatActivity() {

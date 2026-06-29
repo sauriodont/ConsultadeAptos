@@ -1,8 +1,9 @@
-package com.example.consultadeaptos.models
+package com.example.consultadeaptos
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.consultadeaptos.models.*
 import java.io.File
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(
@@ -196,4 +197,55 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
         db.close()
         return total
     }
+    fun isPropietarioValido(correo: String, apto: String): Boolean {
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT correo FROM propietarios WHERE apto = ? AND correo = ?",
+            arrayOf(apto, correo)
+        )
+        val valido = cursor.moveToFirst()
+        cursor.close()
+        db.close()
+        return valido
+    }
+
+    fun isUsuarioRegistrado(apto: String): Boolean {
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT apartamento FROM usuarios WHERE apartamento = ?",
+            arrayOf(apto)
+        )
+        val registrado = cursor.moveToFirst()
+        cursor.close()
+        db.close()
+        return registrado
+    }
+
+    fun insertUsuario(correo: String, contrasena: String, apto: String): Boolean {
+        return try {
+            val db = writableDatabase
+            db.execSQL(
+                "INSERT INTO usuarios (correo, contrasena, apartamento) VALUES (?, ?, ?)",
+                arrayOf(correo, contrasena, apto)
+            )
+            db.close()
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    fun validateUser(correo: String, contrasena: String, apto: String): Boolean {
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT correo FROM usuarios WHERE correo = ? AND contrasena = ? AND apartamento = ?",
+            arrayOf(correo, contrasena, apto)
+        )
+        val valido = cursor.moveToFirst()
+        cursor.close()
+        db.close()
+        return valido
+    }
+
+
 }

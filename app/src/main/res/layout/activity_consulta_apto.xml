@@ -13,16 +13,9 @@
         android:padding="16dp"
         android:gravity="center_horizontal">
 
-        <!-- Selector de apartamento -->
-        <Spinner
-            android:id="@+id/spinner_apto"
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginBottom="16dp" />
-
         <!-- Propietario e Inquilino -->
         <TextView
-            android:id="@+id/tv_propietario"
+            android:id="@+id/usu_propietario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Propietario:"
@@ -30,7 +23,7 @@
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tv_inquilino"
+            android:id="@+id/usu_inquilino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Inquilino:"
@@ -39,21 +32,21 @@
 
         <!-- Información financiera -->
         <TextView
-            android:id="@+id/tv_deuda_bs"
+            android:id="@+id/usu_deuda_bs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Deuda Bs:"
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tv_deuda_usd"
+            android:id="@+id/usu_deuda_usd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Deuda $:"
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tv_abonos"
+            android:id="@+id/usu_abonos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Abonos:"
@@ -61,7 +54,7 @@
 
         <!-- Título Meses Pendientes -->
         <TextView
-            android:id="@+id/tv_meses_titulo"
+            android:id="@+id/usu_meses_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Meses Pendientes"
@@ -105,7 +98,7 @@
 
         <!-- RecyclerView Meses -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_meses"
+            android:id="@+id/usu_recycler_meses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
@@ -122,9 +115,9 @@
 
         <!-- RecyclerView Historial -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_historial"
+            android:id="@+id/usu_recycler_historial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:nestedScrollingEnabled="false"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

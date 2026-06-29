@@ -8,6 +8,13 @@ android {
     namespace = "com.example.consultadeaptos"
     compileSdk = 36
 
+    packaging {
+        resources {
+            excludes += setOf("META-INF/INDEX.LIST")
+        }
+    }
+
+
     defaultConfig {
         applicationId = "com.example.consultadeaptos"
         minSdk = 24
@@ -36,12 +43,13 @@ android {
     buildFeatures {
         compose = true
         viewBinding = true
-
     }
+
 }
 
 dependencies {
 
+    implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -52,6 +60,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,4 +69,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.material)
+    implementation(libs.android.gif.drawable)
+    implementation(libs.google.api.client.android)
+    implementation(libs.google.api.services.drive)
+    implementation(libs.google.api.client.gson)
+    implementation(libs.play.services.auth)
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+
 }

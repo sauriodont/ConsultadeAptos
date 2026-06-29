@@ -2,20 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissões -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/karuai"
         android:supportsRtl="true"
         android:theme="@style/Theme.ConsultadeAptos">
 
+        <!-- Tela inicial -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -23,8 +23,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.consultadeaptos.Consulta" />
-        <activity android:name="com.example.consultadeaptos.Pizarra" />
-    </application>
 
+        <!-- Demais telas -->
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Consulta" />
+        <activity android:name=".Pizarra" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MenuConsultaActivity" />
+        <activity android:name=".Consulta_apto" />
+        <activity android:name=".Consultarecibos" />
+
+        <!-- FileProvider para abrir PDFs -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
 </manifest>
